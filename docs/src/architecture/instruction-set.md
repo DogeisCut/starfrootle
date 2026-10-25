@@ -3,9 +3,9 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail. Operands, flag effects, byte lengths and cycle counts are not documented yet.
 
-Opcodes are a single byte, so there can be at most 255 different instructions. Opcodes are grouped by their high nibble. Any byte that is not a defined opcode behaves like `NoOp`.
+Opcodes are a single byte, so there can be at most 255 different instructions. Opcodes are grouped by their high nybble. Any byte that is not a defined opcode behaves like `NoOp`.
 
-| High nibble | Group |
+| High nybble | Group |
 |---|---|
 | `0x` | System |
 | `1x` | Loads and stores |
