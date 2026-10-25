@@ -7,6 +7,7 @@
 - [Memory Map](./architecture/memory-map.md)
 - [CPU](./architecture/cpu.md)
 - [Instruction Set](./architecture/instruction-set.md)
+- [ROM Layout](./architecture/rom_layout.md)
 
 # Graphics
 
