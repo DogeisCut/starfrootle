@@ -25,10 +25,10 @@ impl Address {
     }
 }
 
-const FLAG_ZERO: u8 = 0b0001;
-const FLAG_CARRY: u8 = 0b0010;
-const FLAG_NEGATIVE: u8 = 0b0100;
-const FLAG_OVERFLOW: u8 = 0b1000;
+pub const FLAG_ZERO: u8 = 0b0001;
+pub const FLAG_CARRY: u8 = 0b0010;
+pub const FLAG_NEGATIVE: u8 = 0b0100;
+pub const FLAG_OVERFLOW: u8 = 0b1000;
 
 pub struct Cpu {
     pub program_counter: Address,
@@ -40,6 +40,6 @@ pub struct Cpu {
 }
 impl Cpu {
     pub fn inc_pc(&mut self) {
-        self.program_counter = Address::from_index(self.program_counter.to_index() + 1);
+        self.program_counter = self.program_counter.wrapping_add(1);
     }
 }

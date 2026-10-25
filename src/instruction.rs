@@ -1,6 +1,5 @@
-use crate::cpu::{Address, Cpu};
 use crate::bus::Bus;
-
+use crate::cpu::{Address, Cpu};
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum Opcode {
@@ -86,17 +85,17 @@ pub fn execute(opcode: Opcode, cpu: &mut Cpu, bus: &mut Bus) {
     match opcode {
         Opcode::NoOp => {
             // No Operation... obviously.
-        },
+        }
         Opcode::Halt => {
             cpu.halted = true;
-        },
+        }
         Opcode::LoadConst => {
             cpu.inc_pc();
             let register: u8 = bus.read_8(cpu.program_counter);
             let dest_reg: u8 = register >> 4;
             cpu.inc_pc();
             cpu.registers[dest_reg as usize] = bus.read_8(cpu.program_counter);
-        },
+        }
         Opcode::LoadMem => {
             cpu.inc_pc();
             let register: u8 = bus.read_8(cpu.program_counter);
@@ -107,8 +106,9 @@ pub fn execute(opcode: Opcode, cpu: &mut Cpu, bus: &mut Bus) {
             let address_mid = bus.read_8(cpu.program_counter);
             cpu.inc_pc();
             let address_low = bus.read_8(cpu.program_counter);
-            cpu.registers[dest_reg as usize] = bus.read_8(Address::new(address_high, address_mid, address_low));
-        },
+            cpu.registers[dest_reg as usize] =
+                bus.read_8(Address::new(address_high, address_mid, address_low));
+        }
         Opcode::StoreMem => todo!(),
         Opcode::Copy => todo!(),
         Opcode::Swap => todo!(),
