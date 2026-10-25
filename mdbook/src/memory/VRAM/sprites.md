@@ -42,5 +42,5 @@ what color in the palette this specific pixel uses.
         - `4`: Clip (This sprite's pixels will only show up on top of other sprite's pixels, regardless of the layer)
         - Currently only these 5 modes are implemented. Future modes may be added. Values above these 4 modes will default to Normal blending.
 - **Byte 6-8** (`FF FF FF`): These bytes are split up into 2 pairs of 3 nybbles. These represent the X and Y coords of a sprite.
-    - **Nybble Triplet X** (`FF F`): Sprites start 8 pixels inside the left of the screen, this value shifts the sprite right across the X axis in pixels.
-    - **Nybble Triplet Y** (`F FF`): Sprites start 8 pixels inside the top of the screen, this value shifts the sprite down across the Y axis in pixels.
+    - **Nybble Triplet X** (`FF F`): Sprites start 8 pixels outside the left of the screen, this value shifts the sprite right across the X axis in pixels.
+    - **Nybble Triplet Y** (`F FF`): Sprites start 8 pixels outside the top of the screen, this value shifts the sprite down across the Y axis in pixels.
