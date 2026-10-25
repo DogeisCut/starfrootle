@@ -18,12 +18,11 @@ VRAM starts at `0x400000`. Each region has a slot that is larger than what it cu
 | `+0x0C000` | `0x4000` | `0x4000` | Tile map for layer 2 |
 | `+0x10000` | `0x4000` | `0x4000` | Tile map for layer 3 |
 | `+0x14000` | `0x4000` | `0x4000` | Tile map for layer 4 |
-
-Everything from `+0x18000` onward is not yet defined.
+| `+0x18000` | `0x8000` | `0` | *Reserved* |
 
 ## Sprite Table
 
-128 [sprite entries](./sprites.md) of 8 bytes each, which is 1 KB. Sprite N lives at `vram_start + N * 8`.
+128 [sprite entries](./sprites.md) of 8 bytes each, which is 1 KB. Sprite N lives at `vram start + N * 8`.
 
 ## Background Color
 
@@ -31,12 +30,12 @@ The background color is 3 bytes, red then green then blue, at `+0x01000`. It is 
 
 ## Layer Registers
 
-Each layer has 8 bytes of [layer registers](./tile-layers.md#layer-registers). The registers for layer N live at `0x401008 + N * 8`.
+Each layer has 8 bytes of [layer registers](./tile-layers.md#layer-registers). The registers for layer N live at `vram start + 0x01008 + N * 8`.
 
 ## Palettes
 
-16 [palettes](./palettes.md) of 16 colors, 3 bytes per color. Color C of palette P is at `0x402000 + P * 0x30 + C * 3`.
+16 [palettes](./palettes.md) of 16 colors, 3 bytes per color. Color C of palette P is at `vram start + 0x02000 + P * 0x30 + C * 3`.
 
 ## Tile Maps
 
-Each [tile layer](./tile-layers.md) has a tile map of 64x64 [tile entries](./tiles.md), 4 bytes each. The tile map for layer N starts at `0x404000 + N * 0x4000`, and the entry at column X and row Y is at `map start + Y * 0x100 + X * 4`.
+Each [tile layer](./tile-layers.md) has a tile map of 64x64 [tile entries](./tiles.md), 4 bytes each. The tile map for layer N starts at `vram start + 0x04000 + N * 0x4000`, and the entry at column X and row Y is at `map start + Y * 0x100 + X * 4`.
