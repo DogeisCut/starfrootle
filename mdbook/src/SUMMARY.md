@@ -1,5 +1,5 @@
 # Summary
 
-- [Mapping](./mapping.md)
-    - [VRAM](./mapping/VRAM.md)
-        - [Sprites](./mapping/VRAM/sprites.md)
+- [Memory](./memory.md)
+    - [VRAM](./memory/VRAM.md)
+        - [Sprites](./memory/VRAM/sprites.md)

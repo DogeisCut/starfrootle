@@ -1,6 +1,7 @@
 mod bus;
 mod cpu;
-mod instructions;
+mod instruction;
+
 fn main() {
     println!("Hello, world!");
 }

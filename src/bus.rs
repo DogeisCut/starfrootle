@@ -1,10 +1,12 @@
-const MEMORY_SIZE: usize = 0xFFFFFF;
+use crate::cpu::Address;
+
+const MEMORY_SIZE: usize = 0x1000000; // 16 MB :p
 
 const RAM_START: usize = 0x000000;
 const VRAM_START: usize = 0x400000;
 const ROM_START: usize = 0x800000;
 
-struct Bus {
+pub struct Bus {
     pub memory: Box<[u8]>,
 }
 
@@ -15,7 +17,7 @@ impl Bus {
 
         Self { memory: static_box }
     }
-    pub fn read_8(&self, address: u8) -> u8 {
-        self.memory.
+    pub fn read_8(&self, address: Address) -> u8 {
+        self.memory[address.to_index()]
     }
 }
