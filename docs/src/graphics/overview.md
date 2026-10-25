@@ -33,4 +33,6 @@ Everything on screen is drawn back to front:
 
 Sprites that share a layer offset are drawn in the order they appear in the sprite table, so later sprites are drawn on top.
 
+A tile layer that is disabled (see [Layer Registers](./tile-layers.md#flags)) is skipped, and everything else is drawn in the same order.
+
 How things blend as they are drawn is purposely undefined for now. See [Blending](./blending.md).

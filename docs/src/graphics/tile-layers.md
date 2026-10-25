@@ -28,6 +28,18 @@ Each layer has 8 bytes of registers:
 | `+0` | 1 byte | Scroll X |
 | `+1` | 1 byte | Scroll Y |
 | `+2` | 1 byte | Blend mode (see [Blending](./blending.md)) |
-| `+3` | 5 bytes | *Reserved* |
+| `+3` | 1 byte | [Flags](#flags) |
+| `+4` | 4 bytes | *Reserved* |
 
 The address of each layer's registers is in [VRAM Layout](./vram-layout.md).
+
+### Flags
+
+*Offset `+3`*
+
+| Bit | Flag |
+|---|---|
+| `0` | Enabled: `1` means the layer is drawn, `0` means the layer is skipped |
+| `1` to `7` | *Reserved* |
+
+A disabled layer is skipped entirely, but its scroll and blend mode values are kept. Sprites are still drawn in the same order relative to where the layer would have been (see the [Overview](./overview.md#draw-order)).
