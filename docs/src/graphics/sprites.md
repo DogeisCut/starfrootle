@@ -37,22 +37,9 @@ This image data is read as an 8x8 indexed image. See [Images](./images.md) for m
 |---|---|
 | Palette | Transform |
 
-**Palette** (`4`): which of the 16 palettes this sprite is using.
+**Palette** (`4`): which of the 16 [palettes](./palettes.md) this sprite is using.
 
-**Transform** (`7`): a transformation applied to the sprite.
-
-| Value | Transformation |
-|---|---|
-| `0` | No rotation |
-| `1` | 90 degrees (clockwise) |
-| `2` | 180 degrees (clockwise) |
-| `3` | 270 degrees (clockwise) |
-| `4` | Horizontally flipped, no rotation |
-| `5` | Horizontally flipped, then 90 degrees (clockwise) |
-| `6` | Horizontally flipped, then 180 degrees (clockwise) |
-| `7` | Horizontally flipped, then 270 degrees (clockwise) |
-
-Anything beyond this repeats the previous entries in the list. These may be used for something in the future.
+**Transform** (`7`): a transformation applied to the sprite's image when it is drawn. The values are listed under [Images](./images.md#transformations).
 
 ### Layer Offset
 
@@ -75,31 +62,20 @@ The layer offset places the sprite relative to the tile layers. Layer 0 is the t
 
 Values `A` to `F` are not yet defined.
 
+Sprites with the same layer offset are drawn in the order they appear in memory, so the sprite that comes later in the sprite table is drawn on top. The full back-to-front order of layers and sprites is described in the [Overview](./overview.md#draw-order).
+
 ### Blend Mode
 
 *Offset `+4`, low nybble* (`0`)
 
-The blend mode affects how the sprite blends with the pixels behind it.
-
-> [!WARNING]
-> The exact math behind sprite blending modes is not defined here yet. See [Blending](./blending.md).
-
-| Value | Mode |
-|---|---|
-| `0` | Normal |
-| `1` | Add |
-| `2` | Multiply |
-| `3` | Invert |
-| `4` | Clip (this sprite's pixels will only show up on top of other sprites' pixels, regardless of the layer) |
-
-Currently only these 5 modes are implemented. Future modes may be added. Values above the defined range default to the same behavior as Normal.
+The blend mode affects how the sprite blends with the pixels behind it. The available modes are listed under [Blending](./blending.md). Blending is purposely left undefined for now.
 
 ### Position
 
 *Offsets `+5` to `+6`* (`FF FF`)
 
-The game screen has a 8 pixel margin around it, sprites can hide beind these.
-Sprite positions are screen-spaced, meaning any tilemap scrolling will not scroll sprites with it.
+The game screen has an 8 pixel margin around it, and sprites can hide behind these.
+Sprite positions are screen-spaced, meaning any tile layer scrolling will not scroll sprites with it.
 
 - **X** (`FF`, from `+5`): sprites start 8 pixels outside the left of the screen. This value shifts the sprite right along the X axis, in pixels.
 - **Y** (`FF`, from `+6`): sprites start 8 pixels outside the top of the screen. This value shifts the sprite down along the Y axis, in pixels.
