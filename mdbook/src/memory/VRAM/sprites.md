@@ -10,7 +10,7 @@ Here's what each of these bytes mean:
 - **Bytes 1-3** (`C0 00 00`): An address that defines what section of memory this sprite will read as image data.
 This image data is read for an 8x8 indexed sprite, an image is made up of 16 bytes, with each nybble representing
 what color in the palette this specific pixel uses. 
-- **Byte 4** (`49`): This byte is split up into 2 nybbles.
+- **Byte 4** (`47`): This byte is split up into 2 nybbles.
     - **Nybble A** (`4`): This nybble represents which of the 16 palletes this sprite is using.
     - **Nybble B** (`7`): This nybble a transformation the sprite:
         - `0`: No Rotation
@@ -22,7 +22,7 @@ what color in the palette this specific pixel uses.
         - `6`: Horizontally flipped, then 180 Degrees (Clockwise)
         - `7`: Horizontally flipped, then 270 Degrees (Clockwise)
         - Anything beyond this repeats the previous entries in the list. These may be used for something in the future.
-- **Byte 5** (`52`): This byte is split up into 2 nybbles.
+- **Byte 5** (`40`): This byte is split up into 2 nybbles.
     - **Nybble A** (`4`): This nybble represents a layer offset for this sprite.
         - `0`: In-front of tile layer 0
         - `1`: Behind of tile layer 0
