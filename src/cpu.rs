@@ -1,5 +1,7 @@
 use std::ops::AddAssign;
 
+use crate::bus::Bus;
+
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
 pub struct Address([u8; 3]);
 
@@ -37,9 +39,13 @@ pub struct Cpu {
     pub flags: u8,
     pub halted: bool,
     pub cycles: u64,
+    pub waiting: bool,
 }
 impl Cpu {
     pub fn inc_pc(&mut self) {
         self.program_counter = self.program_counter.wrapping_add(1);
+    }
+    pub fn step(&mut self, bus: &mut Bus) {
+
     }
 }
