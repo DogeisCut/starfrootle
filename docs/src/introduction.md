@@ -15,7 +15,7 @@ Starfrootle is a fantasy console written in Rust.
 | Tile layers | 5 (each with a 64x64 tile map) |
 | Sprites | 128 |
 | Palettes | 16 (16 colors each) |
-| Controllers | 4 |
+| Controllers | 8 |
 
 ## Conventions
 
