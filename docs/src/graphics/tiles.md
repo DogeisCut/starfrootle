@@ -5,10 +5,10 @@
 
 Tiles are 8x8 [images](./images.md). Tiles are stored in the tile maps of [tile layers](./tile-layers.md), and a tile map entry is 4 bytes:
 
-| Offset | Size | Field |
-|---|---|---|
-| `+0` | 3 bytes | Image address |
-| `+3` | 1 byte | Palette (high nybble), Transform (low nybble) |
+| Offset | Size    | Field                                         |
+|--------|---------|-----------------------------------------------|
+| `+0`   | 3 bytes | Image address                                 |
+| `+3`   | 1 byte  | Palette (high nybble), Transform (low nybble) |
 
 This is the same format as the first 4 bytes of a [sprite entry](./sprites.md#layout).
 

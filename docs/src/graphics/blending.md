@@ -8,13 +8,13 @@
 
 ## Available Modes
 
-| Value | Mode | Sprites | Tile layers |
-|---|---|---|---|
-| `0` | Normal | Yes | Yes |
-| `1` | Add | Yes | Yes |
-| `2` | Multiply | Yes | Yes |
-| `3` | Invert | Yes | Yes |
-| `4` | Clip | Yes | No |
+| Value | Mode     | Sprites | Tile layers |
+|-------|----------|---------|-------------|
+| `0`   | Normal   | Yes     | Yes         |
+| `1`   | Add      | Yes     | Yes         |
+| `2`   | Multiply | Yes     | Yes         |
+| `3`   | Invert   | Yes     | Yes         |
+| `4`   | Clip     | Yes     | No          |
 
 Currently only these 5 modes exist. Future modes may be added. Values above the listed modes are not yet defined.
 

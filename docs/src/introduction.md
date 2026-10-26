@@ -7,16 +7,16 @@ Starfrootle is a fantasy console written in Rust.
 
 ## Specifications
 
-| | |
-|---|---|
-| Address space | 16 MB (24-bit addresses, `0x000000` to `0xFFFFFF`) |
-| Screen | 240x240 (30 tiles across, 30 tiles vertically) |
-| Tile and sprite size | 8x8 |
-| Tile layers | 5 (each with a 64x64 tile map) |
-| Sprites | 128 |
-| Palettes | 16 (16 colors each) |
-| Controllers | 8 |
-| Audio | 16 channels, 48,000 Hz stereo output |
+|                      |                                                    |
+|----------------------|----------------------------------------------------|
+| Address space        | 16 MB (24-bit addresses, `0x000000` to `0xFFFFFF`) |
+| Screen               | 240x240 (30 tiles across, 30 tiles vertically)     |
+| Tile and sprite size | 8x8                                                |
+| Tile layers          | 5 (each with a 64x64 tile map)                     |
+| Sprites              | 128                                                |
+| Palettes             | 16 (16 colors each)                                |
+| Controllers          | 8                                                  |
+| Audio                | 16 channels, 48,000 Hz stereo output               |
 
 ## Conventions
 

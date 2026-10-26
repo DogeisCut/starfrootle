@@ -16,20 +16,20 @@ Where each of these lives in memory is described in [VRAM Layout](./vram-layout.
 
 Everything on screen is drawn back to front:
 
-| Step | Drawn |
-|---|---|
-| 1 | Background color |
-| 2 | Sprites with layer offset `9` |
-| 3 | Tile layer 4 |
-| 4 | Sprites with layer offset `8`, then `7` |
-| 5 | Tile layer 3 |
-| 6 | Sprites with layer offset `6`, then `5` |
-| 7 | Tile layer 2 |
-| 8 | Sprites with layer offset `4`, then `3` |
-| 9 | Tile layer 1 |
-| 10 | Sprites with layer offset `2`, then `1` |
-| 11 | Tile layer 0 |
-| 12 | Sprites with layer offset `0` |
+| Step | Drawn                                   |
+|------|-----------------------------------------|
+| 1    | Background color                        |
+| 2    | Sprites with layer offset `9`           |
+| 3    | Tile layer 4                            |
+| 4    | Sprites with layer offset `8`, then `7` |
+| 5    | Tile layer 3                            |
+| 6    | Sprites with layer offset `6`, then `5` |
+| 7    | Tile layer 2                            |
+| 8    | Sprites with layer offset `4`, then `3` |
+| 9    | Tile layer 1                            |
+| 10   | Sprites with layer offset `2`, then `1` |
+| 11   | Tile layer 0                            |
+| 12   | Sprites with layer offset `0`           |
 
 Sprites that share a layer offset are drawn in the order they appear in the sprite table, so later sprites are drawn on top.
 

@@ -13,13 +13,13 @@ A single sprite may look like this in memory:
 
 ### Layout
 
-| Offset | Size | Field |
-|---|---|---|
-| `+0` | 3 bytes | [Image address](#image-address) |
-| `+3` | 1 byte | [Palette](#palette-and-transform) (high nybble), [Transform](#palette-and-transform) (low nybble) |
-| `+4` | 1 byte | [Layer offset](#layer-offset) (high nybble), [Blend mode](#blend-mode) (low nybble) |
-| `+5` | 2 bytes | [X and Y position](#position) |
-| `+7` | 1 byte | *Reserved* |
+| Offset | Size    | Field                                                                                             |
+|--------|---------|---------------------------------------------------------------------------------------------------|
+| `+0`   | 3 bytes | [Image address](#image-address)                                                                   |
+| `+3`   | 1 byte  | [Palette](#palette-and-transform) (high nybble), [Transform](#palette-and-transform) (low nybble) |
+| `+4`   | 1 byte  | [Layer offset](#layer-offset) (high nybble), [Blend mode](#blend-mode) (low nybble)               |
+| `+5`   | 2 bytes | [X and Y position](#position)                                                                     |
+| `+7`   | 1 byte  | *Reserved*                                                                                        |
 
 ### Image Address
 
@@ -34,8 +34,8 @@ This image data is read as an 8x8 indexed image. See [Images](./images.md) for m
 *Offset `+3`* (`47`)
 
 | High nybble | Low nybble |
-|---|---|
-| Palette | Transform |
+|-------------|------------|
+| Palette     | Transform  |
 
 **Palette** (`4`): which of the 16 [palettes](./palettes.md) this sprite is using.
 
@@ -47,18 +47,18 @@ This image data is read as an 8x8 indexed image. See [Images](./images.md) for m
 
 The layer offset places the sprite relative to the tile layers. Layer 0 is the topmost tile layer.
 
-| Value | Sprite is drawn... |
-|---|---|
-| `0` | In front of tile layer 0 |
-| `1` | Behind tile layer 0 |
-| `2` | In front of tile layer 1, behind anything on layer 0 |
-| `3` | Behind tile layer 1 |
-| `4` | In front of tile layer 2, behind anything on layer 1 |
-| `5` | Behind tile layer 2 |
-| `6` | In front of tile layer 3, behind anything on layer 2 |
-| `7` | Behind tile layer 3 |
-| `8` | In front of tile layer 4, behind anything on layer 3 |
-| `9` | Behind tile layer 4 |
+| Value | Sprite is drawn...                                   |
+|-------|------------------------------------------------------|
+| `0`   | In front of tile layer 0                             |
+| `1`   | Behind tile layer 0                                  |
+| `2`   | In front of tile layer 1, behind anything on layer 0 |
+| `3`   | Behind tile layer 1                                  |
+| `4`   | In front of tile layer 2, behind anything on layer 1 |
+| `5`   | Behind tile layer 2                                  |
+| `6`   | In front of tile layer 3, behind anything on layer 2 |
+| `7`   | Behind tile layer 3                                  |
+| `8`   | In front of tile layer 4, behind anything on layer 3 |
+| `9`   | Behind tile layer 4                                  |
 
 Values `A` to `F` are not yet defined.
 
@@ -86,13 +86,13 @@ If you wish to hide a sprite or aren't using it, parking it in any corner outsid
 
 `C0 00 00 47 40 FF FF 00` decodes to:
 
-| Field | Value |
-|---|---|
-| Image address | `0xC00000` |
-| Palette | `4` |
-| Transform | `7` (horizontally flipped, then 270 degrees clockwise) |
-| Layer offset | `4` (in front of tile layer 2, behind anything on layer 1) |
-| Blend mode | `0` (Normal) |
-| X | `0xFF` (255) |
-| Y | `0xFF` (255) |
-| *Reserved* | `0x00` (0) |
+| Field         | Value                                                      |
+|---------------|------------------------------------------------------------|
+| Image address | `0xC00000`                                                 |
+| Palette       | `4`                                                        |
+| Transform     | `7` (horizontally flipped, then 270 degrees clockwise)     |
+| Layer offset  | `4` (in front of tile layer 2, behind anything on layer 1) |
+| Blend mode    | `0` (Normal)                                               |
+| X             | `0xFF` (255)                                               |
+| Y             | `0xFF` (255)                                               |
+| *Reserved*    | `0x00` (0)                                                 |
