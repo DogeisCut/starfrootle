@@ -1,7 +1,7 @@
 use crate::{bus::Bus, cpu::Cpu};
 
 
-pub const CYCLES_PER_FRAME: usize = 240_000;
+pub const CYCLES_PER_FRAME: u64 = 240_000;
 
 pub struct Console {
     pub cpu: Cpu,
@@ -19,7 +19,7 @@ impl Console {
         self.cpu.waiting = false;
         self.render();
     }
-    pub fn render() {
+    pub fn render(&mut self) {
         
     }
 }
