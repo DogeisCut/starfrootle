@@ -49,8 +49,8 @@ will always return 255.
 
 ### Flags
 
-| Bit    | Flag                    |
-|--------|-------------------------|
-| `0`    | Controller connected    |
-| `1`    | Controller uses battery |
-| `2-15` | Reserved                |
+| Bit         | Flag                    |
+|-------------|-------------------------|
+| `0`         | Controller connected    |
+| `1`         | Controller uses battery |
+| `2` to `7`  | Reserved                |
