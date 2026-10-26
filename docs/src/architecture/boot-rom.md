@@ -5,6 +5,8 @@
 
 Every time the console starts, it runs the boot ROM before the game. The boot ROM is not optional, and it is not built into the emulator. It is a separate file that the emulator loads into its own region of memory, and if that file is missing the emulator will not start.
 
+A reset will not run the boot ROM again. The intro animation can be skipped by pressing any binary input on any of the 8 controllers after the heafer is checked.
+
 ## Region
 
 The boot ROM lives at `0x430000`, in a slot of 64 KB (see [Memory Map](./memory-map.md)). Unlike the [game's ROM](./rom-layout.md), which is really RAM, the boot ROM is truly read-only and writes to it are ignored. A game that corrupts memory can never stop the console from starting again.
@@ -22,7 +24,5 @@ The boot ROM lives at `0x430000`, in a slot of 64 KB (see [Memory Map](./memory-
 
 - The format of the boot ROM file, and how the CPU finds its entry point.
 - Exactly what state the console is in when a game starts, which step 5 has to produce.
-- Whether a reset runs the boot ROM again.
-- Whether the intro animation can be skipped after the header is checked.
 - What the error screen looks like, and what the boot ROM does after showing it.
 - Where the emulator looks for the boot ROM file.
