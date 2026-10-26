@@ -7,7 +7,7 @@ I/O starts at `0x420000`
 
 | Offset  | Size         | Contents                              |
 |---------|--------------|---------------------------------------|
-| `+0x00` | `0x78`       | [Controller table](#controller-table) |
+| `+0x00` | `0x80`       | [Controller table](#controller-table) |
 
 
 ## Controller Table 
