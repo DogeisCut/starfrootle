@@ -3,13 +3,10 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail.
 
-> [!NOTE]
-> This layout is not final, and VRAM itself may be made smaller in the future.
-
 VRAM starts at `0x400000`. Each region has a slot that is larger than what it currently uses, so a region can grow without the others having to move.
 
 | Offset | Size | Used | Contents |
-|---|---|---|---|
+|--------|------|------|----------|
 | `+0x00000` | `0x1000` | `0x400` | [Sprite table](#sprite-table) |
 | `+0x01000` | `0x1000` | `0x30` | [Background color](#background-color) and [layer registers](#layer-registers) |
 | `+0x02000` | `0x2000` | `0x300` | [Palettes](#palettes) |

@@ -5,12 +5,10 @@
 
 ## Controller Entry
 
-A controller entry is exactly 8 bytes. Controller N lives at `base + N * 8`, where `base` is the start of the
+A controller entry is exactly 16 bytes. Controller N lives at `base + N * 16`, where `base` is the start of the
 controller table (see [I/O Layout](./io_layout.md)).
 
 A controller entry in memory can be modified but will be overwritten by the hardware each frame.
-
-
 
 ### Layout
 

@@ -1,6 +1,6 @@
 use crate::cpu::Address;
 
-const MEMORY_SIZE: usize = 0x1000000; // 16 MB :p
+const MEMORY_SIZE: usize = 0xFFFFFF + 1; // 16 MB :p
 
 const RAM_START: usize = 0x000000;
 const VRAM_START: usize = 0x400000;
