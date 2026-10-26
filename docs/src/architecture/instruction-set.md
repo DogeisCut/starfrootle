@@ -30,6 +30,8 @@ Opcodes are a single byte, so there can be at most 256 different instructions. O
 | `10`   | `LoadConst`      | `D_` `value`   | 3     | none    | register = value                                                     |
 | `11`   | `LoadMem`        | `D_` `address` | 5     | none    | register = byte at address                                           |
 | `12`   | `StoreMem`       | `S_` `address` | 5     | none    | byte at address = register                                           |
+| `13`   | `LoadIndirect`   | `DS`           | 1     | none    | D = byte at address at S, S+1, S+2 (registers wrap)                  |
+| `14`   | `StoreIndirect`  | `DS`           | 1     | none    | byte at address at D, D+1, D+2 (registers wrap) = S                  |
 | `20`   | `Copy`           | `DS`           | 2     | none    | D = S                                                                |
 | `21`   | `Swap`           | `DS`           | 2     | none    | exchange D and S                                                     |
 | `22`   | `Push`           | `S_`           | 2     | none    | push register onto the stack                                         |
