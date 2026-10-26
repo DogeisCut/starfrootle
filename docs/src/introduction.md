@@ -16,6 +16,7 @@ Starfrootle is a fantasy console written in Rust.
 | Sprites | 128 |
 | Palettes | 16 (16 colors each) |
 | Controllers | 8 |
+| Audio | 16 channels, 48,000 Hz stereo output |
 
 ## Conventions
 

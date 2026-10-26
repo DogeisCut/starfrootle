@@ -23,4 +23,5 @@
 # I/O
 
 - [Input](./io/input.md)
+- [Audio](./io/audio.md)
 - [I/O Layout](./io/io-layout.md)
