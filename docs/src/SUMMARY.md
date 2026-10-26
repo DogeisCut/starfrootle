@@ -8,6 +8,7 @@
 - [CPU](./architecture/cpu.md)
 - [Instruction Set](./architecture/instruction-set.md)
 - [ROM Layout](./architecture/rom-layout.md)
+- [Boot ROM](./architecture/boot-rom.md)
 
 # Graphics
 

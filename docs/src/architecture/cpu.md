@@ -1,7 +1,7 @@
 # CPU
 
 > [!NOTE]
-> This page is currently a stub and needs more detail. Information on cycles, stack, reset, the main loop, etc. are completley missing.
+> This page is currently a stub and needs more detail. Information on cycles, stack, reset, the main loop, etc. are completely missing.
 
 ## Registers
 

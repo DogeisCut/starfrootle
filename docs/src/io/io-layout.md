@@ -5,12 +5,11 @@
 
 I/O starts at `0x420000`. Each device gets a slot of `0x1000` bytes, so a device can grow without the others having to move.
 
-| Offset  | Size         | Contents                              |
-|---------|--------------|---------------------------------------|
-| `+0x00` | `0x80`       | [Controller table](#controller-table) |
-| `+0x1000` | `0x400`    | [Audio channel table](#audio)         |
-| `+0x1400` | `0x10`     | [Global audio block](#audio)           |
-
+| Offset    | Size    | Contents                              |
+|-----------|---------|---------------------------------------|
+| `+0x0000` | `0x80`  | [Controller table](#controller-table) |
+| `+0x1000` | `0x400` | [Audio channel table](#audio)         |
+| `+0x1400` | `0x10`  | [Global audio block](#audio)          |
 
 ## Controller Table 
 
@@ -37,7 +36,7 @@ The [global audio block](./audio.md#global-block) is 16 bytes and lives right af
 - A scanline compare value.
 
 ## Save memory
-- A small region of ram is dedicated to svae data.
+- A small region of RAM is dedicated to save data, and is kept between sessions. Its place in memory is in the [Memory Map](../architecture/memory-map.md).
 - Game ID used in the header, emulator uses the game id to help name the save file. 
 - Emulator writes the save data to a file.
 

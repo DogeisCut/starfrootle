@@ -27,7 +27,7 @@ The background color is 3 bytes, red then green then blue, at `+0x01000`. It is 
 
 ## Screen Brightness
 
-The byte at `+0x01003` controls the screen brightness. At `0`, the screen will render as normal. As the value approches `255`, the screen gets closer to pure black, where `255` *is* pure black.
+The byte at `+0x01003` controls the screen brightness. At `0`, the screen will render as normal. As the value approaches `255`, the screen gets closer to pure black, where `255` *is* pure black.
 
 The 4 bytes after it (`+0x01004` to `+0x01007`) are reserved.
 
