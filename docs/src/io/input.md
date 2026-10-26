@@ -42,7 +42,7 @@ A controller entry in memory can be modified but will be overwritten by the hard
 
 ### Battery
 
-A percentage from 0 to 255 that tells you how much battery this controller has left. A controller with no battery level
+Outputs a level from 0 (empty) to 255 (full). A controller with no battery level
 will always return 255.
 
 ### Flags

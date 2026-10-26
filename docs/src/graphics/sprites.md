@@ -1,7 +1,7 @@
 # Sprites
 
 > [!NOTE]
-> This page is currently a stub and needs more detail.
+> This page is currently a stub and needs more detail. Larger Sprites needs more info on constructing "meta sprites" (sprites made up of multiple sprites)
 
 ## Sprite Entry
 
@@ -96,3 +96,7 @@ If you wish to hide a sprite or aren't using it, parking it in any corner outsid
 | X             | `0xFF` (255)                                               |
 | Y             | `0xFF` (255)                                               |
 | *Reserved*    | `0x00` (0)                                                 |
+
+## Larger Sprites
+
+128 sprites is 8 characters of 32x32 (16 parts each), or 32 of 16x16.

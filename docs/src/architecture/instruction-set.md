@@ -3,6 +3,9 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail. Operands, flag effects, byte lengths and cycle counts are not documented yet.
 
+> [!WARNING]
+> This is not the final instruction set. While opcodes are very unlikely to change, new opcodes/instructions will be created as Starfrootle develops. 
+
 Opcodes are a single byte, so there can be at most 255 different instructions. Opcodes are grouped by their high nybble. Any byte that is not a defined opcode behaves like `NoOp`.
 
 | High nybble | Group                        |

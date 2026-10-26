@@ -5,17 +5,17 @@
 
 VRAM starts at `0x400000`. Most regions have a slot that is larger than what it currently uses, so such regions can grow without the others having to move.
 
-| Offset     | Size     | Used     | Contents                                                                      |
-|------------|----------|----------|-------------------------------------------------------------------------------|
-| `+0x00000` | `0x1000` | `0x400`  | [Sprite table](#sprite-table)                                                 |
-| `+0x01000` | `0x1000` | `0x30`   | [Background color](#background-color) and [layer registers](#layer-registers) |
-| `+0x02000` | `0x2000` | `0x300`  | [Palettes](#palettes)                                                         |
-| `+0x04000` | `0x4000` | `0x4000` | [Tile map](#tile-maps) for layer 0                                            |
-| `+0x08000` | `0x4000` | `0x4000` | Tile map for layer 1                                                          |
-| `+0x0C000` | `0x4000` | `0x4000` | Tile map for layer 2                                                          |
-| `+0x10000` | `0x4000` | `0x4000` | Tile map for layer 3                                                          |
-| `+0x14000` | `0x4000` | `0x4000` | Tile map for layer 4                                                          |
-| `+0x18000` | `0x8000` | `0`      | *Reserved*                                                                    |
+| Offset     | Size     | Used     | Contents                                                                                                                |
+|------------|----------|----------|-------------------------------------------------------------------------------------------------------------------------|
+| `+0x00000` | `0x1000` | `0x400`  | [Sprite table](#sprite-table)                                                                                           |
+| `+0x01000` | `0x1000` | `0x30`   | [Background color](#background-color), [Screen Brightness](#screen-brightness), and [layer registers](#layer-registers) |
+| `+0x02000` | `0x2000` | `0x300`  | [Palettes](#palettes)                                                                                                   |
+| `+0x04000` | `0x4000` | `0x4000` | [Tile map](#tile-maps) for layer 0                                                                                      |
+| `+0x08000` | `0x4000` | `0x4000` | Tile map for layer 1                                                                                                    |
+| `+0x0C000` | `0x4000` | `0x4000` | Tile map for layer 2                                                                                                    |
+| `+0x10000` | `0x4000` | `0x4000` | Tile map for layer 3                                                                                                    |
+| `+0x14000` | `0x4000` | `0x4000` | Tile map for layer 4                                                                                                    |
+| `+0x18000` | `0x8000` | `0`      | *Reserved*                                                                                                              |
 
 ## Sprite Table
 
@@ -23,7 +23,13 @@ VRAM starts at `0x400000`. Most regions have a slot that is larger than what it 
 
 ## Background Color
 
-The background color is 3 bytes, red then green then blue, at `+0x01000`. It is drawn behind everything and is not part of any [palette](./palettes.md). The 5 bytes after it (`+0x01003` to `+0x01007`) are reserved.
+The background color is 3 bytes, red then green then blue, at `+0x01000`. It is drawn behind everything and is not part of any [palette](./palettes.md).
+
+## Screen Brightness
+
+The byte at `+0x01003` controls the screen brightness. At `0`, the screen will render as normal. As the value approches `255`, the screen gets closer to pure black, where `255` *is* pure black.
+
+The 4 bytes after it (`+0x01004` to `+0x01007`) are reserved.
 
 ## Layer Registers
 
