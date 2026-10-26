@@ -17,7 +17,7 @@ Each region ends right before the next one starts. In the case of ROM, it ends a
 | `0x420000` | I/O    | See [I/O Layout](../io/io-layout.md)                                      |
 | `0x800000` | ROM    | See [ROM Layout](./rom-layout.md)                                         |
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > "ROM" is actually more RAM space, the ROM data from the game is copied to this section during the boot sequence by the hardware.
 > This means ROM is actually writable like RAM, because it *is* RAM. Developers are encouraged to only create self-modifying code,
-> if they know what they are doing.
+> if they know what they are doing. The mapping seperation exists to keep developers aware.
