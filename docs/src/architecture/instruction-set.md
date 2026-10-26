@@ -36,7 +36,7 @@ Opcodes are a single byte, so there can be at most 255 different instructions. O
 | `32`   | `Inc`            | `D_`           | 2     | Z N V   | D = D + 1                                    |
 | `33`   | `Dec`            | `D_`           | 2     | Z N V   | D = D - 1                                    |
 | `40`   | `And`            | `DS`           | 2     | Z N     | D = D & S                                    |
-| `41`   | `Or`             | `DS`           | 2     | Z N     | D = D | S                                    |
+| `41`   | `Or`             | `DS`           | 2     | Z N     | D = D \| S                                   |
 | `42`   | `Xor`            | `DS`           | 2     | Z N     | D = D ^ S                                    |
 | `43`   | `Not`            | `D_`           | 2     | Z N     | D = ~D                                       |
 | `44`   | `ShiftLeft`      | `Dn`           | 2     | Z C N   | D <<= n                                      |

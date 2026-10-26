@@ -3,7 +3,7 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail.
 
-VRAM starts at `0x400000`. Each region has a slot that is larger than what it currently uses, so a region can grow without the others having to move.
+VRAM starts at `0x400000`. Most regions have a slot that is larger than what it currently uses, so such regions can grow without the others having to move.
 
 | Offset | Size | Used | Contents |
 |--------|------|------|----------|
