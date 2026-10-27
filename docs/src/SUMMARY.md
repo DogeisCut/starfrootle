@@ -29,3 +29,7 @@
 
 # Assembler
 - [Rust Assembler](./assembler/rust-assembler.md)
+
+---
+
+[License](./license.md)

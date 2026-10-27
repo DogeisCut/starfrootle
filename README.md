@@ -48,3 +48,7 @@ Currently not looking for contributors, if you notice a bug, you can still make 
 This will likely change in the future once the docs are finished.
 
 ## License
+
+Read the docs: https://dogeiscut.github.io/starfrootle/license.html
+
+License files also exist in several places of the repo. The closest license file is the one that applies.
