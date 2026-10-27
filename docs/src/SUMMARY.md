@@ -1,11 +1,13 @@
 # Summary
 
 [Introduction](./introduction.md)
+[Project Structure](./project-structure.md)
 
 # Architecture
 
 - [Memory Map](./architecture/memory-map.md)
 - [CPU](./architecture/cpu.md)
+- [Timing/Main Loop](./architecture/timing-and-main-loop.md)
 - [Instruction Set](./architecture/instruction-set.md)
 - [ROM Layout](./architecture/rom-layout.md)
 - [Boot ROM](./architecture/boot-rom.md)

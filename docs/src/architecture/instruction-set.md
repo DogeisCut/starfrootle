@@ -1,7 +1,7 @@
 # Instruction Set
 
 > [!NOTE]
-> This page is currently a stub and needs more detail. Cycle counts are not documented yet.
+> This page is currently a stub and needs more detail. How flags are set for each instruction are not documented yet.
 
 > [!WARNING]
 > This is not the final instruction set. While opcodes are very unlikely to change, new opcodes/instructions will be created as Starfrootle develops. 
@@ -30,8 +30,8 @@ Opcodes are a single byte, so there can be at most 256 different instructions. O
 | `10`   | `LoadConst`      | `D_` `value`   | 3     | none    | register = value                                                     |
 | `11`   | `LoadMem`        | `D_` `address` | 5     | none    | register = byte at address                                           |
 | `12`   | `StoreMem`       | `S_` `address` | 5     | none    | byte at address = register                                           |
-| `13`   | `LoadIndirect`   | `DS`           | 1     | none    | D = byte at address at S, S+1, S+2 (registers wrap)                  |
-| `14`   | `StoreIndirect`  | `DS`           | 1     | none    | byte at address at D, D+1, D+2 (registers wrap) = S                  |
+| `13`   | `LoadIndirect`   | `DS`           | 2     | none    | D = byte at address at S, S+1, S+2                                   |
+| `14`   | `StoreIndirect`  | `DS`           | 2     | none    | byte at address at D, D+1, D+2 = S                                   |
 | `20`   | `Copy`           | `DS`           | 2     | none    | D = S                                                                |
 | `21`   | `Swap`           | `DS`           | 2     | none    | exchange D and S                                                     |
 | `22`   | `Push`           | `S_`           | 2     | none    | push register onto the stack                                         |
@@ -58,6 +58,18 @@ Opcodes are a single byte, so there can be at most 256 different instructions. O
 | `81`   | `Return`         | none           | 1     | none    | pop PC                                                               |
 | `82`   | `CallIndirect`   | `address`      | 4     | none    | push return address (3 bytes), jump to the address stored at address |
 
+## Unused Operand Nybbles
+
+For instances like `D_` or `S_`, the low nybble `_` is completley ignored. 
+
 ## Indirect Jump and Call
 
 `JumpIndirect` and `CallIndirect` take the address of a *vector* instead of a destination. The CPU reads the 3-byte (big-endian) address stored at that location and jumps to it, so code can jump to an address that is stored in memory. For example, the [boot ROM](./boot-rom.md) uses `JumpIndirect` on the reset vector in the [ROM header](./rom-layout.md) to start a game.
+
+## Indirect Load and Store
+
+Register indexes beyond `0xD` will wrap around to the start of the register indexes. For instance `13 7F` would set the register at index `0x7` with the value of the address defined by the registers `0xF` `0x0` and `0x1`. 
+
+## Cycle Cost
+
+For each instruction, it's 1 cycle plus 1 per byte fetched or accessed. For instance, TODO PUT EXAMPLE

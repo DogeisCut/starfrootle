@@ -5,11 +5,11 @@
 
 Every time the console starts, it runs the boot ROM before the game. The boot ROM is not optional, and it is not built into the emulator. It is a separate file that the emulator loads into its own region of memory, and if that file is missing the emulator will not start.
 
-A reset will not run the boot ROM again. The intro animation can be skipped by pressing any binary input on any of the 8 controllers after the heafer is checked.
+The intro animation can be skipped by pressing any binary input on any of the 8 controllers after the heafer is checked.
 
 ## Region
 
-The boot ROM lives at `0x430000`, in a slot of 64 KB (see [Memory Map](./memory-map.md)). Unlike the [game's ROM](./rom-layout.md), which is really RAM, the boot ROM is truly read-only and writes to it are ignored. A game that corrupts memory can never stop the console from starting again.
+Where the boot ROM starts is defined in starts is defined in the [memory map](../architecture/memory-map.md). Unlike the [game's ROM](./rom-layout.md), which is really RAM, the boot ROM is truly read-only and writes to it are ignored. A game that corrupts memory can never stop the console from starting again.
 
 ## Boot Sequence
 
@@ -20,9 +20,11 @@ The boot ROM lives at `0x430000`, in a slot of 64 KB (see [Memory Map](./memory-
 5. The boot ROM puts the console into a clean state.
 6. The boot ROM starts the game by jumping to the game's reset vector, using [`JumpIndirect`](./instruction-set.md#indirect-jump-and-call) on the reset vector at `rom start + 0x10`.
 
+## File Format
+The boot ROM file the emulator needs is a raw binary file starting at where the boot ROM starts in memory, the CPU starts at its first byte.
+
 ## Not Decided Yet
 
-- The format of the boot ROM file, and how the CPU finds its entry point.
 - Exactly what state the console is in when a game starts, which step 5 has to produce.
 - What the error screen looks like, and what the boot ROM does after showing it.
 - Where the emulator looks for the boot ROM file.

@@ -3,7 +3,7 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail.
 
-VRAM starts at `0x400000`. Most regions have a slot that is larger than what it currently uses, so such regions can grow without the others having to move.
+Where VRAM starts is defined in the [memory map](../architecture/memory-map.md). Most regions have a slot that is larger than what it currently uses, so such regions can grow without the others having to move.
 
 | Offset     | Size     | Used     | Contents                                                                                                                |
 |------------|----------|----------|-------------------------------------------------------------------------------------------------------------------------|

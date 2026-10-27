@@ -3,7 +3,7 @@
 > [!NOTE]
 > This page is currently a stub and needs more detail.
 
-I/O starts at `0x420000`. Each device gets a slot of `0x1000` bytes, so a device can grow without the others having to move.
+Where I/O starts is defined in the [memory map](../architecture/memory-map.md). Each device gets a slot of `0x1000` bytes, so a device can grow without the others having to move.
 
 | Offset    | Size    | Contents                              |
 |-----------|---------|---------------------------------------|
