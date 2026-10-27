@@ -20,4 +20,7 @@ impl Bus {
     pub fn read_8(&self, address: Address) -> u8 {
         self.memory[address.to_index()]
     }
+    pub fn write_8(&mut self, address: Address, value: u8) {
+        self.memory[address.to_index()] = value
+    }
 }
