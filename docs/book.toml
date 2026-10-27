@@ -2,3 +2,8 @@
 title = "Starfrootle"
 authors = ["DogeisCut"]
 language = "en"
+
+[output.html]
+git-repository-url = "https://github.com/DogeisCut/starfrootle"
+edit-url-template = "https://github.com/DogeisCut/starfrootle/edit/master/docs/src/{path}"
+site-url = "/starfrootle/"
